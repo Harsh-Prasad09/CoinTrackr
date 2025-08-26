@@ -1,6 +1,6 @@
-# CoinTrackr (Market Tracker)
+# CoinTrackr
 
-Small React + Vite app that displays live cryptocurrency prices (via CoinGecko) and demo stock components. Built with Tailwind CSS and Recharts.
+Small React app that displays live cryptocurrency prices (via CoinGecko). Built with Tailwind CSS and Recharts.
 
 ## Quick start
 
@@ -15,8 +15,6 @@ npm install
 ```powershell
 npm run dev
 ```
-
-Open http://localhost:5173/ in your browser.
 
 ## What I changed recently
 - Improved responsive layouts for hero, list, and chart modal.
@@ -39,12 +37,29 @@ Open http://localhost:5173/ in your browser.
 - `src/components/ErrorMessage.jsx` — small error UI component
 - `public/CoinTrackr-LOGO.png` — brand image
 
-## Environment variables
-Copy `.env.example` to `.env` and add your CoinGecko key if you have one. The app defaults to the public CoinGecko endpoints if none provided.
-
 ## Notes
 - This project is a front-end only demo. No user data is stored.
 - Charts use `recharts` and scale responsively; the modal adjusts height on small screens.
 
 ## License
-MIT
+MIT License
+
+Copyright (c) 2025 Harsh Prasad
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
