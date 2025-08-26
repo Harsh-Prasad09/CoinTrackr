@@ -14,9 +14,10 @@ const Dashboard = () => {
         {/* Hero Section - large, centered, clean */}
           <section className="w-full border-b border-gray-200 py-16 sm:py-24 px-4">
             <div className="max-w-[1200px] mx-auto text-center px-2">
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 leading-tight">
-              CoinTrackr — Professional Crypto Insights
-            </h1>
+              <h1 className='text-4xl sm:text-6xl md:text-7xl font-extrabold text-indigo-600 leading-tight pb-3'>CoinTrackr</h1>
+              <h2 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-gray-800 leading-tight">
+              Professional Crypto Insights
+              </h2>
               <p className="mt-6 sm:mt-8 text-base sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Live market data for the top cryptocurrencies, delivered in a clean, professional layout.
               Track prices, view price charts, and analyze market cap and volume — all displayed in Indian Rupees (INR).
@@ -30,17 +31,17 @@ const Dashboard = () => {
 
             {/* Feature row */}
             <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 text-left">
+              <div className="p-8 bg-slate-100 rounded-2xl border border-slate-400 text-left">
                 <div className="text-sm text-gray-500">Coins</div>
                 <div className="mt-3 text-3xl font-bold text-indigo-600">Top 100</div>
                 <div className="mt-2 text-sm text-gray-600">Sorted by market cap</div>
               </div>
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 text-left">
+              <div className="p-8 bg-slate-100 rounded-2xl border border-slate-400 text-left">
                 <div className="text-sm text-gray-500">Currency</div>
                 <div className="mt-3 text-3xl font-bold text-indigo-600">INR</div>
                 <div className="mt-2 text-sm text-gray-600">Local currency view</div>
               </div>
-              <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100 text-left">
+              <div className="p-8 bg-slate-100 rounded-2xl border border-slate-400 text-left">
                 <div className="text-sm text-gray-500">Refresh</div>
                 <div className="mt-3 text-3xl font-bold text-indigo-600">Every 5m</div>
                 <div className="mt-2 text-sm text-gray-600">Automatic updates</div>

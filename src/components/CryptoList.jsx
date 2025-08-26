@@ -18,6 +18,7 @@ const CryptoList = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage] = useState(10)
   const [chartRange, setChartRange] = useState('30d')
+  const [lastUpdated, setLastUpdated] = useState(null)
 
   const API_KEY = import.meta.env.VITE_COINGECKO_API_KEY
   const BASE_URL = import.meta.env.VITE_COINGECKO_BASE_URL || 'https://api.coingecko.com/api/v3'
@@ -32,6 +33,7 @@ const CryptoList = () => {
       )
       setCryptos(response.data)
       setFilteredCryptos(response.data)
+      setLastUpdated(new Date())
     } catch (err) {
       setError('Failed to fetch cryptocurrency data. Please check your internet connection.')
     } finally {
@@ -141,10 +143,18 @@ const CryptoList = () => {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden">
       {/* Controls */}
-      <div className="px-6 py-4 border-b border-gray-100 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div className="px-6 py-8 border-b border-gray-100 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <h2 className="text-xl font-bold text-gray-900">Top 100 Cryptocurrencies</h2>
           <p className="text-left text-sm text-gray-500">Live prices in INR</p>
+          {lastUpdated && (
+            <div className="mt-4 flex items-center gap-2">
+              <span className="inline-flex items-center px-2 py-2 rounded bg-indigo-50 text-xs text-indigo-700 font-medium shadow-sm">
+                <svg className="w-4 h-4 mr-1 text-indigo-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" /></svg>
+                Last updated: {lastUpdated.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
+              </span>
+            </div>
+          )}
         </div>
         <div className="flex items-center gap-3">
           <input
@@ -185,9 +195,9 @@ const CryptoList = () => {
         <>
           {/* Table */}
           {/* Desktop / Tablet Table */}
-          <div className="hidden sm:block overflow-x-auto">
+          <div className="hidden sm:block overflow-x-auto py-4">
             <table className="w-full text-sm text-left">
-              <thead className="bg-gray-50">
+              <thead className="bg-gray-100">
                 <tr>
                   <th className="px-6 py-3 font-semibold text-gray-600">Rank & Coin</th>
                   <th className="px-6 py-3 font-semibold text-gray-600">Price</th>
@@ -255,7 +265,7 @@ const CryptoList = () => {
           </div>
 
           {/* Pagination */}
-          <div className="px-6 py-4 flex items-center justify-between border-t text-sm">
+          <div className="bg-gray-100 px-6 py-4 flex items-center justify-between border-t text-sm">
             <div className="text-gray-600">
               Showing {indexOfFirstItem + 1}-{Math.min(indexOfLastItem, filteredCryptos.length)} of {filteredCryptos.length}
             </div>
@@ -263,14 +273,14 @@ const CryptoList = () => {
               <button
                 onClick={() => setCurrentPage(p => Math.max(p - 1, 1))}
                 disabled={currentPage === 1}
-                className="px-3 py-1 border rounded-md disabled:opacity-50"
+                className="px-3 py-1 border border-gray-400 rounded-md disabled:opacity-50"
               >
                 Previous
               </button>
               <button
                 onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))}
                 disabled={currentPage === totalPages}
-                className="px-3 py-1 border rounded-md disabled:opacity-50"
+                className="px-3 py-1 border border-gray-400 rounded-md disabled:opacity-50"
               >
                 Next
               </button>
