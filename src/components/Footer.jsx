@@ -60,7 +60,7 @@ const Footer = () => {
                 <span>CoinGecko API</span>
                 <ExternalLink className="w-4 h-4" />
               </a>
-              <a href="https://github.com/" target="_blank" rel="noreferrer"
+              <a href="https://github.com/Harsh-Prasad09/CoinTrackr" target="_blank" rel="noreferrer"
                  className="flex items-center justify-center space-x-2 text-gray-700 hover:text-indigo-600">
                 <span>GitHub</span>
                 <Github className="w-4 h-4" />
